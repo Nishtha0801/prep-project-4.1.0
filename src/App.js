@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./Components/Header";
 import Card from "./Components/Card";
 import logo from './mlh-prep.png';
+import FavPlaceCard from "./Components/FavPlaces";
 function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -44,11 +45,13 @@ function App() {
         <img className='logo' src={logo} alt='MLH Prep Logo'></img>
         <div>
         <Header city={city} setCity={setCity} />
+        
         <div className="Results">
           {!isLoaded && <h2>Loading...</h2>}
           {console.log(results)}
           {isLoaded && results && <Card results={results} />}
         </div>
+        <FavPlaceCard/>
         </div>
       </>
     );
